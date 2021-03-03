@@ -1,7 +1,7 @@
 import React from 'react';
 import { Item, Segment } from 'semantic-ui-react';
 
-export default function EventDetailedSidebar() {
+export default function EventDetailedSidebar({attendees}) {
   return (
     <>
       <Segment
@@ -12,11 +12,11 @@ export default function EventDetailedSidebar() {
         inverted
         color="teal"
       >
-        {/* {attendees.length} {attendees.length > 1 ? 'people' : 'person'} Going */}
+        {attendees.length} {attendees.length > 1 ? 'people' : 'person'} Going
       </Segment>
       <Segment attached>
         <Item.Group relaxed divided>
-          {/* {attendees.map(attendee => (
+          {attendees.map(attendee => (
             <Item key={attendee.id} style={{position: 'relative'}}>
             <Item.Image size="tiny" src={attendee.photoURL || '/assets/user.png'}/>
             <Item.Content verticalAlign="middle">
@@ -25,7 +25,7 @@ export default function EventDetailedSidebar() {
                 </Item.Header>
             </Item.Content>
           </Item>
-          ))} */}
+          ))}
         </Item.Group>
       </Segment>
     </>
